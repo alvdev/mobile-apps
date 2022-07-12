@@ -24,7 +24,7 @@ class TopicsScreen extends StatelessWidget {
 
           return Scaffold(
             appBar: AppBar(
-              backgroundColor: Colors.deepPurple,
+              backgroundColor: Colors.red,
               title: const Text('Topics'),
               actions: [
                 IconButton(
