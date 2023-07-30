@@ -3,19 +3,23 @@ import 'package:flutter/material.dart';
 import 'package:dice/styled_text.dart';
 
 class GradientContainer extends StatelessWidget {
-  const GradientContainer({super.key});
+  const GradientContainer({super.key, required this.colors});
+
+  final List<Color> colors;
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         gradient: LinearGradient(
-            colors: [Colors.blue, Colors.lightGreen],
+            colors: [...colors],
             begin: Alignment.topCenter,
             end: Alignment.bottomRight),
       ),
       child: const Center(
-        child: StyledText(),
+        child: StyledText(
+          'Demo text',
+        ),
       ),
     );
   }
