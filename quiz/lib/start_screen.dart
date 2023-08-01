@@ -1,41 +1,46 @@
 import 'package:flutter/material.dart';
 
-import 'package:quiz/questions_screen.dart';
-
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Container(
-      decoration: const BoxDecoration(
-        color: Color.fromRGBO(83, 1, 152, 1),
-      ),
-      child: Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Image.asset(
-              'assets/images/logo.png',
-              width: 300,
+  Widget build(context) {
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Image.asset(
+            'assets/images/logo.png',
+            width: 300,
+            color: const Color.fromARGB(150, 255, 255, 255),
+          ),
+          // Opacity(
+          //   opacity: 0.6,
+          //   child: Image.asset(
+          //     'assets/images/quiz-logo.png',
+          //     width: 300,
+          //   ),
+          // ),
+          const SizedBox(height: 80),
+          const Text(
+            'Learn Flutter the fun way!',
+            style: TextStyle(
+              color: Color.fromARGB(255, 237, 223, 252),
+              fontSize: 24,
             ),
-            const SizedBox(height: 60),
-            const Text(
-              'Quiz demo text',
-              style: TextStyle(
-                  fontSize: 30, color: Color.fromRGBO(255, 255, 255, .6)),
+          ),
+          const SizedBox(height: 30),
+          OutlinedButton.icon(
+            onPressed: () {
+              // ...
+            },
+            style: OutlinedButton.styleFrom(
+              foregroundColor: Colors.white,
             ),
-            const SizedBox(height: 60),
-            FilledButton.icon(
-              icon: const Icon(Icons.play_arrow),
-              onPressed: () {},
-              label: const Text(
-                'Start Quiz',
-                style: TextStyle(fontSize: 20),
-              ),
-            ),
-          ],
-        ),
+            icon: const Icon(Icons.arrow_right_alt),
+            label: const Text('Start Quiz'),
+          )
+        ],
       ),
     );
   }
