@@ -1,18 +1,18 @@
 import 'package:flutter/material.dart';
 
-class QuizScreen extends StatefulWidget {
-  const QuizScreen({super.key});
+class Quiz extends StatefulWidget {
+  const Quiz({super.key});
 
   @override
-  State<QuizScreen> createState() => _QuizScreenState();
+  State<Quiz> createState() => _QuizState();
 }
 
-class _QuizScreenState extends State<QuizScreen> {
-  Widget activeScreen = const QuizScreen();
+class _QuizState extends State<Quiz> {
+  Widget activeScreen = const Quiz();
 
   void switchScreen() {
     setState(() {
-      activeScreen = const QuizScreen();
+      activeScreen = const Quiz();
     });
   }
 
