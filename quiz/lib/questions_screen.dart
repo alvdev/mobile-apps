@@ -29,12 +29,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               style: const TextStyle(fontSize: 20, color: Colors.white),
             ),
             const SizedBox(height: 30),
-            ...currentQuestion.answers.map(
-              (item) => AnswerButton(
-                answer: item,
-                onTap: () {},
-              ),
-            ),
+            ...currentQuestion.getShuffledAnswers().map(
+                  (item) => AnswerButton(
+                    answer: item,
+                    onTap: () {},
+                  ),
+                ),
           ],
         ),
       ),
