@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AnswerButton extends StatelessWidget {
   const AnswerButton({super.key, required this.answer, required this.onTap});
@@ -16,7 +17,8 @@ class AnswerButton extends StatelessWidget {
         ),
         padding: const EdgeInsets.symmetric(horizontal: 50, vertical: 10),
       ),
-      child: Text(answer),
+      child: Text(answer,
+          textAlign: TextAlign.center, style: GoogleFonts.roboto(fontSize: 18)),
     );
   }
 }
