@@ -43,12 +43,12 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
               style: GoogleFonts.roboto(color: Colors.white, fontSize: 24),
             ),
             const SizedBox(height: 30),
-            ...currentQuestion.getShuffledAnswers().map(
-                  (answer) => AnswerButton(
-                    answer: answer,
-                    onTap: () => nextQuestion(answer),
-                  ),
-                ),
+            ...currentQuestion.shuffleAnswers.map(
+              (answer) => AnswerButton(
+                answer: answer,
+                onTap: () => nextQuestion(answer),
+              ),
+            ),
           ],
         ),
       ),
