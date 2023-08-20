@@ -40,9 +40,15 @@ class ResultsScreen extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
             Text(
+                style: const TextStyle(
+                  fontSize: 24,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
                 'Your answered $totalCorrect of $totalQuestions questions correctly'),
-            const SizedBox(height: 30),
+            const SizedBox(height: 50),
             Summary(summary),
+            const SizedBox(height: 50),
             TextButton(
               onPressed: () {},
               child: const Text('Restart quiz'),

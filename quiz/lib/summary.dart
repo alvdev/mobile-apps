@@ -14,14 +14,36 @@ class Summary extends StatelessWidget {
           children: summaryData
               .map((data) => Row(
                     children: [
-                      Text(((data['question_index'] as int) + 1).toString()),
+                      SizedBox(
+                        width: 50,
+                        child: Text(
+                          ((data['question_index'] as int) + 1).toString(),
+                        ),
+                      ),
                       Expanded(
-                        child: Column(children: [
-                          Text(data['question'] as String),
-                          const SizedBox(height: 20),
-                          Text(data['user_answer'] as String),
-                          Text(data['correct_answer'] as String),
-                        ]),
+                        child: Column(
+                          children: [
+                            Text(
+                              data['question'] as String,
+                              style: const TextStyle(
+                                  fontWeight: FontWeight.w500,
+                                  fontSize: 18,
+                                  color: Color.fromRGBO(255, 255, 255, .7)),
+                              textAlign: TextAlign.left,
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              data['user_answer'] as String,
+                              textAlign: TextAlign.left,
+                              style: const TextStyle(
+                                color: Color.fromARGB(255, 112, 218, 245),
+                              ),
+                            ),
+                            const SizedBox(height: 20),
+                            Text(data['correct_answer'] as String),
+                            const SizedBox(height: 40),
+                          ],
+                        ),
                       )
                     ],
                   ))
