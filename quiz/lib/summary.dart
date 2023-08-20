@@ -17,6 +17,7 @@ class Summary extends StatelessWidget {
                       Text(data['question'] as String),
                       const SizedBox(height: 20),
                       Text(data['user_answer'] as String),
+                      Text(data['correct_answer'] as String),
                     ]),
                   )
                 ],
