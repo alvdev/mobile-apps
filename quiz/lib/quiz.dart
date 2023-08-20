@@ -24,7 +24,6 @@ class _QuizState extends State<Quiz> {
     if (selectedQuestions.length == questions.length) {
       setState(
         () {
-          selectedQuestions = [];
           activeScreen = 'results-screen';
         },
       );
