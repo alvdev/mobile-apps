@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'dart:developer';
 
 import 'package:quiz/data/questions.dart';
 import 'package:quiz/summary.dart';
