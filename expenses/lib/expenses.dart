@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 class Expenses extends StatefulWidget {
@@ -8,6 +9,21 @@ class Expenses extends StatefulWidget {
 }
 
 class _ExpensesState extends State<Expenses> {
+  final List<Expense> _registerExpenses = [
+    Expense(
+      title: 'Gym',
+      amount: 25.99,
+      date: DateTime.now(),
+      category: Category.others,
+    ),
+    Expense(
+      title: 'Internet',
+      amount: 24.99,
+      date: DateTime.now(),
+      category: Category.work,
+    ),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
