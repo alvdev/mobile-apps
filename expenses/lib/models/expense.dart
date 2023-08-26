@@ -10,7 +10,7 @@ enum Category { food, travel, leisure, work, others }
 
 const categoryIcons = {
   Category.food: Icons.fastfood,
-  Category.travel: Icons.travel_explore ,
+  Category.travel: Icons.travel_explore,
   Category.leisure: Icons.movie,
   Category.work: Icons.work,
   Category.others: Icons.miscellaneous_services,
