@@ -66,6 +66,7 @@ class _NewExpenseState extends State<NewExpense> {
           date: _selectedDate!,
           category: _selectedCategory),
     );
+    Navigator.pop(context);
   }
 
   @override
