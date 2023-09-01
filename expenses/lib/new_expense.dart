@@ -4,7 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:expenses/models/expense.dart';
 
 class NewExpense extends StatefulWidget {
-  const NewExpense({super.key});
+  const NewExpense({super.key, required this.onSaveExpense});
+
+  final void Function(Expense expense) onSaveExpense;
 
   @override
   State<NewExpense> createState() => _NewExpenseState();
@@ -56,6 +58,14 @@ class _NewExpenseState extends State<NewExpense> {
       );
       return;
     }
+
+    widget.onSaveExpense(
+      Expense(
+          title: _titleController.text,
+          amount: enteredAmount,
+          date: _selectedDate!,
+          category: _selectedCategory),
+    );
   }
 
   @override
