@@ -30,7 +30,8 @@ void main() {
         textTheme: ThemeData().textTheme.copyWith(
               titleLarge:
                   const TextStyle(fontSize: 24, fontWeight: FontWeight.normal),
-              titleMedium: const TextStyle(fontSize: 18),
+              titleMedium: TextStyle(
+                  fontSize: 18, color: kColorScheme.onPrimaryContainer),
             ),
       ),
       home: const Expenses(),
