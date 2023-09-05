@@ -3,7 +3,12 @@ import 'package:flutter/material.dart';
 import 'package:expenses/expenses.dart';
 
 var kColorScheme = ColorScheme.fromSeed(
-  seedColor: Color.fromARGB(228, 79, 189, 100),
+  seedColor: const Color.fromRGBO(228, 79, 189, 100),
+);
+
+var kDarkColorScheme = ColorScheme.fromSeed(
+  brightness: Brightness.dark,
+  seedColor: const Color.fromRGBO(100, 100, 100, 10),
 );
 
 
@@ -11,6 +16,10 @@ void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
+
+      darkTheme: ThemeData()
+          .copyWith(useMaterial3: true, colorScheme: kDarkColorScheme),
+
       theme: ThemeData().copyWith(
         useMaterial3: true,
         colorScheme: kColorScheme,
@@ -34,6 +43,7 @@ void main() {
                   fontSize: 18, color: kColorScheme.onPrimaryContainer),
             ),
       ),
+      themeMode: ThemeMode.dark,
       home: const Expenses(),
     ),
   );
