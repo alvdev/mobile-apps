@@ -43,7 +43,7 @@ class _ExpensesState extends State<Expenses> {
 
   void _removeExpense(Expense expense) {
     final expenseIndex = _registerExpenses.indexOf(expense);
-    
+
     setState(() {
       _registerExpenses.remove(expense);
     });
@@ -64,6 +64,11 @@ class _ExpensesState extends State<Expenses> {
 
   @override
   Widget build(BuildContext context) {
+    final width = MediaQuery.of(context).size.width;
+    final height = MediaQuery.of(context).size.height;
+
+    print('The width is: $width');
+
     Widget mainContent = const Center(
       child: Text('No expenses found!'),
     );
@@ -74,7 +79,7 @@ class _ExpensesState extends State<Expenses> {
         onRemoveExpense: _removeExpense,
       );
     }
-    
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Expenses tracker'),
@@ -85,14 +90,23 @@ class _ExpensesState extends State<Expenses> {
           )
         ],
       ),
-      body: Column(
-        children: [
-          const Text('Text 1'),
-          Expanded(
-            child: mainContent,
-          ),
-        ],
-      ),
+      body: width < 600
+          ? Column(
+              children: [
+                const Text('This is a column'),
+                Expanded(
+                  child: mainContent,
+                ),
+              ],
+            )
+          : Row(
+              children: [
+                const Text('This is a row'),
+                Expanded(
+                  child: mainContent,
+                ),
+              ],
+            ),
     );
   }
 }
