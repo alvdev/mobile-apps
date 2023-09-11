@@ -11,15 +11,12 @@ var kDarkColorScheme = ColorScheme.fromSeed(
   seedColor: const Color.fromRGBO(100, 100, 100, 10),
 );
 
-
 void main() {
   runApp(
     MaterialApp(
       debugShowCheckedModeBanner: false,
-
       darkTheme: ThemeData()
           .copyWith(useMaterial3: true, colorScheme: kDarkColorScheme),
-
       theme: ThemeData().copyWith(
         useMaterial3: true,
         colorScheme: kColorScheme,
