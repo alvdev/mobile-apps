@@ -16,6 +16,14 @@ class _CounterScreenState extends State<CounterScreen> {
       appBar: AppBar(
         title: const Text('Counter'),
         centerTitle: true,
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.refresh_rounded),
+            onPressed: () {
+              setState(() => counter = 0);
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -26,9 +34,9 @@ class _CounterScreenState extends State<CounterScreen> {
               style:
                   const TextStyle(fontSize: 150, fontWeight: FontWeight.w100),
             ),
-            const Text(
-              'Clics',
-              style: TextStyle(fontSize: 50, fontWeight: FontWeight.w200),
+            Text(
+              counter == 1 ? 'click' : 'clicks',
+              style: const TextStyle(fontSize: 50, fontWeight: FontWeight.w200),
             ),
           ],
         ),
