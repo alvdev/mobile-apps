@@ -45,13 +45,25 @@ class _CounterScreenState extends State<CounterScreen> {
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            shape: const RoundedRectangleBorder(
+              side: BorderSide(color: Colors.white, width: 1),
+              borderRadius: BorderRadius.all(
+                Radius.circular(100),
+              ),
+            ),
             onPressed: () {
               setState(() => counter--);
             },
-            child: const Icon(Icons.exposure_minus_1_outlined),
+            child: const Icon(Icons.exposure_minus_1),
           ),
           const SizedBox(height: 20),
           FloatingActionButton(
+            shape: const RoundedRectangleBorder(
+              side: BorderSide(color: Colors.white, width: 1),
+              borderRadius: BorderRadius.all(
+                Radius.circular(100),
+              ),
+            ),
             onPressed: () {
               setState(() => counter++);
             },
