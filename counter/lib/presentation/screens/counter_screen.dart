@@ -41,11 +41,23 @@ class _CounterScreenState extends State<CounterScreen> {
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          setState(() => counter++);
-        },
-        child: const Icon(Icons.plus_one_outlined),
+      floatingActionButton: Column(
+        mainAxisAlignment: MainAxisAlignment.end,
+        children: [
+          FloatingActionButton(
+            onPressed: () {
+              setState(() => counter--);
+            },
+            child: const Icon(Icons.exposure_minus_1_outlined),
+          ),
+          const SizedBox(height: 20),
+          FloatingActionButton(
+            onPressed: () {
+              setState(() => counter++);
+            },
+            child: const Icon(Icons.plus_one_outlined),
+          ),
+        ],
       ),
     );
   }
