@@ -41,36 +41,34 @@ class _CounterScreenState extends State<CounterScreen> {
           ],
         ),
       ),
-      floatingActionButton: Column(
+      floatingActionButton: const Column(
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
-          FloatingActionButton(
-            shape: const RoundedRectangleBorder(
-              side: BorderSide(color: Colors.white, width: 1),
-              borderRadius: BorderRadius.all(
-                Radius.circular(100),
-              ),
-            ),
-            onPressed: () {
-              setState(() => counter--);
-            },
-            child: const Icon(Icons.exposure_minus_1),
-          ),
-          const SizedBox(height: 20),
-          FloatingActionButton(
-            shape: const RoundedRectangleBorder(
-              side: BorderSide(color: Colors.white, width: 1),
-              borderRadius: BorderRadius.all(
-                Radius.circular(100),
-              ),
-            ),
-            onPressed: () {
-              setState(() => counter++);
-            },
-            child: const Icon(Icons.plus_one_outlined),
-          ),
+          CustomFloatingButton(icon: Icons.plus_one),
+          SizedBox(height: 10),
+          CustomFloatingButton(icon: Icons.exposure_minus_1),
         ],
       ),
+    );
+  }
+}
+
+class CustomFloatingButton extends StatelessWidget {
+  final IconData icon;
+
+  const CustomFloatingButton({super.key, required this.icon});
+
+  @override
+  Widget build(BuildContext context) {
+    return FloatingActionButton(
+      shape: const RoundedRectangleBorder(
+        side: BorderSide(color: Colors.white, width: 1),
+        borderRadius: BorderRadius.all(
+          Radius.circular(100),
+        ),
+      ),
+      onPressed: () {},
+      child: Icon(icon),
     );
   }
 }
