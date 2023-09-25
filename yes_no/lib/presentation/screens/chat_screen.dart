@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/chat/chat_messages.dart';
+
 class ChatScreen extends StatelessWidget {
   const ChatScreen({super.key});
 
@@ -14,6 +16,7 @@ class ChatScreen extends StatelessWidget {
         title: const Text('Chat Screen'),
         centerTitle: true,
       ),
+      body: const ChatMessages(),
     );
   }
 }
