@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'my_bubble_message.dart';
+import 'her_bubble_message.dart';
 
 class ChatMessages extends StatelessWidget {
   const ChatMessages({super.key});
@@ -13,7 +14,9 @@ class ChatMessages extends StatelessWidget {
           Expanded(
             child: ListView.builder(
               itemCount: 20,
-              itemBuilder: (context, index) => const MyBubbleMessage(),
+              itemBuilder: (context, index) => index % 2 == 0
+                  ? const HerBubbleMessage()
+                  : const MyBubbleMessage(),
             ),
           ),
           const Text('Chat Screen'),
