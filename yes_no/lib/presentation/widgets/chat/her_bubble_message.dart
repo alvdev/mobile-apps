@@ -29,9 +29,18 @@ class HerBubbleMessage extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.network(
-                  'https://yesno.wtf/assets/yes/8-2f93962e2ab24427df8589131da01a4d.gif',
-                  fit: BoxFit.cover,
-                  width: 50),
+                'https://yesno.wtf/assets/yes/8-2f93962e2ab24427df8589131da01a4d.gif',
+                fit: BoxFit.cover,
+                width: 50,
+                loadingBuilder: (context, child, loadingProgress) {
+                  if (loadingProgress == null) return child;
+
+                  return const Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+                    child: Text('Sending message...'),
+                  );
+                },
+              ),
             ),
           ),
         ),
