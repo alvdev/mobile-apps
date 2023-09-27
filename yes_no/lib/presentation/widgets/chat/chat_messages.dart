@@ -1,25 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
+import 'package:yes_no/domain/entities/message_entity.dart';
 
 import 'my_bubble_message.dart';
-import 'her_bubble_message.dart';
+import 'him_bubble_message.dart';
+
+import '../../providers/chat_provider.dart';
 
 class ChatMessages extends StatelessWidget {
   const ChatMessages({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final chatProvider = context.watch<ChatProvider>();
+
     return SafeArea(
       child: Column(
         children: [
           Expanded(
             child: ListView.builder(
-              itemCount: 20,
-              itemBuilder: (context, index) => index % 2 == 0
-                  ? const HerBubbleMessage()
-                  : const MyBubbleMessage(),
-            ),
+                itemCount: chatProvider.messages.length,
+                itemBuilder: (context, index) {
+                  final message = chatProvider.messages[index];
+
+                  return message.fromWho == FromWho.me
+                      ? const MyBubbleMessage()
+                      : const HimBubbleMessage();
+                }),
           ),
-          MessageField(),
+          const MessageField(),
         ],
       ),
     );
