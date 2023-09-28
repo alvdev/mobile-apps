@@ -4,6 +4,7 @@ import 'package:yes_no/domain/entities/message_entity.dart';
 
 class HimBubbleMessage extends StatelessWidget {
   final Message message;
+
   const HimBubbleMessage({super.key, required this.message});
 
   @override
@@ -32,7 +33,8 @@ class HimBubbleMessage extends StatelessWidget {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(20),
               child: Image.network(
-                'https://yesno.wtf/assets/yes/8-2f93962e2ab24427df8589131da01a4d.gif',
+                message.imageUrl ??
+                    'https://yesno.wtf/assets/yes/8-2f93962e2ab24427df8589131da01a4d.gif',
                 fit: BoxFit.cover,
                 width: 50,
                 loadingBuilder: (context, child, loadingProgress) {
