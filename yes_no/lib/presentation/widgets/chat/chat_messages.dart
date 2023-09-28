@@ -30,7 +30,11 @@ class ChatMessages extends StatelessWidget {
                         );
                 }),
           ),
-          const MessageField(),
+          MessageField(
+            // onValue: (value) => chatProvider.sendMessage(value),
+            onValue: chatProvider
+                .sendMessage, // Same line as above but shorter when value is the same
+          ),
         ],
       ),
     );
@@ -38,7 +42,8 @@ class ChatMessages extends StatelessWidget {
 }
 
 class MessageField extends StatelessWidget {
-  const MessageField({super.key});
+  final ValueChanged<String> onValue;
+  const MessageField({super.key, required this.onValue});
 
   @override
   Widget build(BuildContext context) {
@@ -50,9 +55,9 @@ class MessageField extends StatelessWidget {
       focusNode: inputFocus,
       onTapOutside: (event) => inputFocus.unfocus(),
       onFieldSubmitted: (value) {
-        print('Valor: ${inputTextController.value.text}');
         inputTextController.clear();
         inputFocus.requestFocus();
+        onValue(value);
       },
       decoration: InputDecoration(
         hintText: 'Enter your message ending with ?',
@@ -62,8 +67,8 @@ class MessageField extends StatelessWidget {
           icon: const Icon(Icons.send_outlined),
           onPressed: () {
             final text = inputTextController.value.text;
-            print(text);
             inputTextController.clear();
+            onValue(text);
           },
         ),
       ),
