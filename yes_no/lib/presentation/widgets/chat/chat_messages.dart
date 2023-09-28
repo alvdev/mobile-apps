@@ -21,11 +21,13 @@ class ChatMessages extends StatelessWidget {
             child: ListView.builder(
                 itemCount: chatProvider.messages.length,
                 itemBuilder: (context, index) {
-                  final message = chatProvider.messages[index];
+                  final text = chatProvider.messages[index];
 
-                  return message.fromWho == FromWho.me
-                      ? const MyBubbleMessage()
-                      : const HimBubbleMessage();
+                  return text.fromWho == FromWho.me
+                      ? MyBubbleMessage(message: text)
+                      : HimBubbleMessage(
+                          message: text,
+                        );
                 }),
           ),
           const MessageField(),
@@ -53,7 +55,7 @@ class MessageField extends StatelessWidget {
         inputFocus.requestFocus();
       },
       decoration: InputDecoration(
-        hintText: 'Enter your message',
+        hintText: 'Enter your message ending with ?',
         contentPadding: const EdgeInsets.all(20),
         filled: true,
         suffixIcon: IconButton(

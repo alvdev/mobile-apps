@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'package:yes_no/domain/entities/message_entity.dart';
+
 class HimBubbleMessage extends StatelessWidget {
-  const HimBubbleMessage({super.key});
+  final Message message;
+  const HimBubbleMessage({super.key, required this.message});
 
   @override
   Widget build(BuildContext context) {
@@ -19,7 +22,7 @@ class HimBubbleMessage extends StatelessWidget {
               color: color.secondary.withOpacity(0.3),
               borderRadius: BorderRadius.circular(20),
             ),
-            child: const Text('Her message'),
+            child: Text(message.message),
           ),
         ),
         FractionallySizedBox(
