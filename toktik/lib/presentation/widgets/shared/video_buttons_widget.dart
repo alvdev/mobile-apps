@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:toktik/domain/entities/video_post.dart';
 import 'package:toktik/config/helpers/human_number.dart';
+import 'package:animate_do/animate_do.dart';
 
 class VideoButtonsWidget extends StatelessWidget {
   final VideoPost video;
@@ -16,8 +17,17 @@ class VideoButtonsWidget extends StatelessWidget {
           iconData: Icons.favorite,
           iconColor: Colors.red,
         ),
+        const SizedBox(
+          height: 10,
+        ),
         _CustomIconButton(
-            value: video.views, iconData: Icons.remove_red_eye_outlined),
+            value: video.likes, iconData: Icons.remove_red_eye_outlined),
+        const SizedBox(height: 10),
+        SpinPerfect(
+            duration: const Duration(seconds: 5),
+            infinite: true,
+            child: const _CustomIconButton(
+                value: 0, iconData: Icons.play_circle_outline)),
       ],
     );
   }
@@ -46,7 +56,7 @@ class _CustomIconButton extends StatelessWidget {
           ),
           onPressed: () => (),
         ),
-        Text(HumanNumber.compact(value.toDouble())),
+        if (value > 0) Text(HumanNumber.compact(value.toDouble()))
       ],
     );
   }
