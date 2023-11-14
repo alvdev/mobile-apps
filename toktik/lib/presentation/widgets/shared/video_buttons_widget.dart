@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:toktik/domain/entities/video_post.dart';
+import 'package:toktik/config/helpers/human_number.dart';
 
 class VideoButtonsWidget extends StatelessWidget {
   final VideoPost video;
@@ -16,7 +17,7 @@ class VideoButtonsWidget extends StatelessWidget {
           iconColor: Colors.red,
         ),
         _CustomIconButton(
-            value: video.likes, iconData: Icons.remove_red_eye_outlined),
+            value: video.views, iconData: Icons.remove_red_eye_outlined),
       ],
     );
   }
@@ -45,7 +46,7 @@ class _CustomIconButton extends StatelessWidget {
           ),
           onPressed: () => (),
         ),
-        Text('$value'),
+        Text(HumanNumber.compact(value.toDouble())),
       ],
     );
   }

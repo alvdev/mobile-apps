@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
     return MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          // lazy: false, // Just for load on first loading for debugging
+          lazy: false, // Just for load on first loading for debugging
           create: (_) => DiscoverProvider()..loadNextPage(),
         ),
       ],
