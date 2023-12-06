@@ -12,6 +12,7 @@ class VideoScrollableViewWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return PageView.builder(
       scrollDirection: Axis.vertical,
+      itemCount: videos.length,
       itemBuilder: (context, index) {
         final VideoPost videoPost = videos[index];
 
