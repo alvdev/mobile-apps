@@ -8,7 +8,7 @@ class DiscoverScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final discoverProvider = context.read<DiscoverProvider>();
+    final discoverProvider = context.watch<DiscoverProvider>();
 
     return Scaffold(
       body: discoverProvider.initialLoading
