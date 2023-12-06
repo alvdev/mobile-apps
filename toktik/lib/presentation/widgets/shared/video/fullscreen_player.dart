@@ -40,15 +40,39 @@ class _FullscreenPlayerState extends State<FullscreenPlayer> {
           return const Center(
             child: CircularProgressIndicator(
               strokeWidth: 2,
+              color: Colors.white,
+              semanticsLabel: 'Loading...',
             ),
           );
         }
 
         return AspectRatio(
           aspectRatio: controller.value.aspectRatio,
-          child: VideoPlayer(controller),
+          child: Stack(
+            children: [
+              VideoPlayer(controller),
+              Positioned(
+                left: 20,
+                bottom: 40,
+                child: _VideoCaption(caption: widget.caption),
+              ),
+            ],
+          ),
         );
       },
+    );
+  }
+}
+
+class _VideoCaption extends StatelessWidget {
+  final String caption;
+
+  const _VideoCaption({required this.caption});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      child: Text(caption),
     );
   }
 }
