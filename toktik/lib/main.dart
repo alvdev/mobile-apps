@@ -20,7 +20,7 @@ class MyApp extends StatelessWidget {
       ],
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: 'Tik Tok',
+        title: 'Tok Tik',
         theme: AppTheme().getTheme(),
         home: const DiscoverScreen(),
       ),
