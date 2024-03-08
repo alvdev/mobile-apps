@@ -13,7 +13,7 @@ class MenuItem {
       required this.icon});
 }
 
-const menuItemsList = <MenuItem>[
+const menuItemList = <MenuItem>[
   MenuItem(
       title: 'Home', subtitle: 'Home screen', link: '/home', icon: Icons.home),
   MenuItem(
