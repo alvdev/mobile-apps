@@ -5,10 +5,12 @@ final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
     GoRoute(
+      name: HomeScreen.name,
       path: '/',
       builder: (context, state) => const HomeScreen(),
     ),
     GoRoute(
+      name: SettingsScreen.name,
       path: '/settings',
       builder: (context, state) => const SettingsScreen(),
     )

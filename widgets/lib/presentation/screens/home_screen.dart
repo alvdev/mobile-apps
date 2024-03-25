@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets/config/menu/menu_items.dart';
+import 'package:widgets/presentation/screens/settings_screen.dart';
 
 class HomeScreen extends StatelessWidget {
+  static const name = 'home_screen';
+
   const HomeScreen({super.key});
 
   @override
@@ -26,8 +29,9 @@ class _HomeView extends StatelessWidget {
     return ListView.builder(
       itemCount: menuItemList.length,
       itemBuilder: (context, index) {
-        final menuItem = menuItemList[index];
-        
+        // No named route
+        // final menuItem = menuItemList[index];
+
         return ListTile(
           leading:
               Icon(menuItemList[index].icon, size: 32, color: color.primary),
@@ -35,7 +39,9 @@ class _HomeView extends StatelessWidget {
           subtitle: Text(menuItemList[index].subtitle),
           trailing: const Icon(Icons.arrow_forward),
           onTap: () {
-            context.push(menuItem.link);
+            // No named route
+            // context.push(menuItem.link);
+            context.pushNamed(SettingsScreen.name);
           },
         );
       },
