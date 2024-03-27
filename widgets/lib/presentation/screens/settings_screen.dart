@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 
 class SettingsScreen extends StatelessWidget {
   static const String name = 'settings_screen';
@@ -12,6 +13,12 @@ class SettingsScreen extends StatelessWidget {
         title: const Text('Settings Screen'),
       ),
       body: _settingsView(),
+      floatingActionButton: ElevatedButton(
+        onPressed: () {
+          context.pop();
+        },
+        child: const Text('Back'),
+      ),
     );
   }
 
