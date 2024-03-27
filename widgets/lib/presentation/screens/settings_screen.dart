@@ -11,7 +11,42 @@ class SettingsScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Settings Screen'),
       ),
-      body: const Placeholder(),
+      body: _settingsView(),
+    );
+  }
+
+  _settingsView() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+      child: Wrap(
+        alignment: WrapAlignment.center,
+        spacing: 10,
+        runSpacing: 10,
+        children: [
+          ElevatedButton(
+            onPressed: () {},
+            child: const Text('This is a button'),
+          ),
+          IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.accessible),
+          ),
+          OutlinedButton(
+            onPressed: () {},
+            child: const Text('This is a button'),
+          ),
+          SegmentedButton(segments: const <ButtonSegment>[
+            ButtonSegment<String>(
+                label: Text('button text'),
+                value: 'Option 1',
+                tooltip: 'This is a tooltip'),
+            ButtonSegment<String>(
+                label: Text('button text'), value: 'Option 2'),
+          ], selected: const {
+            'Option 1'
+          })
+        ],
+      ),
     );
   }
 }
