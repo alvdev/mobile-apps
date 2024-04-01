@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:widgets/config/menu/menu_items.dart';
-import 'package:widgets/presentation/screens/settings_screen.dart';
+import 'package:widgets/presentation/screens.dart';
 
 class HomeScreen extends StatelessWidget {
   static const name = 'home_screen';
@@ -40,8 +40,8 @@ class _HomeView extends StatelessWidget {
           trailing: const Icon(Icons.arrow_forward),
           onTap: () {
             // No named route
-            // context.push(menuItem.link);
-            context.pushNamed(SettingsScreen.name);
+            // context.push(menuItemList[index].link);
+            context.pushNamed(menuItemList[index].name);
           },
         );
       },

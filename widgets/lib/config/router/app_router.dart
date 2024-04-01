@@ -11,8 +11,13 @@ final appRouter = GoRouter(
     ),
     GoRoute(
       name: SettingsScreen.name,
-      path: '/settings',
+      path: '/settingss',
       builder: (context, state) => const SettingsScreen(),
+    ),
+    GoRoute(
+      name: CategoriesScreen.name,
+      path: '/categories',
+      builder: (context, state) => const CategoriesScreen(),
     )
   ],
 );
