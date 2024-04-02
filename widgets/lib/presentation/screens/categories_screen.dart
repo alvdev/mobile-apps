@@ -11,9 +11,16 @@ class CategoriesScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Settings Screen'),
       ),
-      body: const Center(
-        child: Text('This is the categories screen body'),
-      ),
+      floatingActionButton: ElevatedButton(
+          child: const Text('Back'),
+          onPressed: () {
+            context.pop();
+          }),
+      body: _categoriesView(),
     );
+  }
+
+  _categoriesView() {
+    return const Placeholder();
   }
 }
