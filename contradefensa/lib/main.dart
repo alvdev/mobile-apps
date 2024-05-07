@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:contradefensa/config/theme/app_theme.dart';
+import 'package:contradefensa/config/router/app_router.dart';
 
 void main() {
   runApp(const Contra());
@@ -10,19 +11,11 @@ class Contra extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return MaterialApp.router(
+      routerConfig: appRouter,
       title: 'Contradefensa',
       debugShowCheckedModeBanner: false,
       theme: AppTheme().getTheme(),
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Contradefensa'),
-          centerTitle: true,
-        ),
-        body: const Center(
-          child: Text('Contradefensa'),
-        ),
-      ),
     );
   }
 }
