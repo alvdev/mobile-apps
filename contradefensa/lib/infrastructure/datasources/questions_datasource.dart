@@ -1,8 +1,8 @@
 import 'package:contradefensa/config/constants/environment.dart';
-import 'package:contradefensa/domain/entities/quiz.dart';
+import 'package:contradefensa/domain/entities/question.dart';
 import 'package:dio/dio.dart';
 
-abstract class QuizzesDatasource {
+abstract class QuestionsDatasource {
   final dio = Dio(
     BaseOptions(baseUrl: 'https://quizapi.io/api/v1', queryParameters: {
       'apiKey': Environment.quizApiKey,
@@ -11,9 +11,9 @@ abstract class QuizzesDatasource {
     }),
   );
 
-  Future<List<Quiz>> getQuizzes({int howMany = 5}) async {
+  Future<List<Question>> getQuestions({int howMany = 5}) async {
     final response = await dio.get('/questions');
-    final List<Quiz> questions = [];
+    final List<Question> questions = [];
 
     return questions;
   }
