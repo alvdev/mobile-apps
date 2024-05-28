@@ -3,17 +3,17 @@ import 'package:contradefensa/infrastructure/models/quizapi/question_quizapi.dar
 
 class QuestionMapper {
   static Question questionToEntity(QuestionQuizapi quizapi) {
-    final correctAnswersSet = <String>{};
+    final correctAnswersList = <String>[];
     quizapi.toJson().forEach((key, value) {
       quizapi.correctAnswers.toJson().forEach((key, value) {
-        if (value is bool && value == true) correctAnswersSet.add(key);
+        if (value is bool && value == true) correctAnswersList.add(key);
       });
     });
 
-    final incorrectAnswersSet = <String>{};
+    final incorrectAnswersList = <String>[];
     quizapi.toJson().forEach((key, value) {
       quizapi.correctAnswers.toJson().forEach((key, value) {
-        if (value is bool && value == false) incorrectAnswersSet.add(key);
+        if (value is bool && value == false) incorrectAnswersList.add(key);
       });
     });
 
@@ -21,10 +21,10 @@ class QuestionMapper {
       id: quizapi.id,
       question: quizapi.question,
       description: quizapi.description,
-      correctAnswers: correctAnswersSet,
-      incorrectAnswers: incorrectAnswersSet,
+      correctAnswers: correctAnswersList,
+      incorrectAnswers: incorrectAnswersList,
       explanation: quizapi.explanation ?? '',
-      tags: quizapi.tags.map((tag) => tag.toString()).toSet(),
+      tags: quizapi.tags.map((tag) => tag.toString()).toList(),
       difficulty: quizapi.difficulty.toString(),
     );
   }

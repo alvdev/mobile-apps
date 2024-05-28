@@ -2,10 +2,10 @@ class Question {
   final int id;
   final String question;
   final String description;
-  final Set<String> correctAnswers;
-  final Set<String> incorrectAnswers;
+  final List<String> correctAnswers;
+  final List<String> incorrectAnswers;
   final String explanation;
-  final Set<String> tags;
+  final List<String> tags;
   final String difficulty;
 
   Question({

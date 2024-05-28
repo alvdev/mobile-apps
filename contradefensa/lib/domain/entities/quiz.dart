@@ -2,8 +2,8 @@ class Quiz {
   final int id;
   final String title;
   final String description;
-  final Set<String> categories;
-  final Set<String> questions;
+  final List<String> categories;
+  final List<String> questions;
 
   Quiz({
     required this.id,
