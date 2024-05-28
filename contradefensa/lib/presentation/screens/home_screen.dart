@@ -1,4 +1,5 @@
 import 'package:contradefensa/presentation/providers/questions/questions_providers.dart';
+import 'package:contradefensa/presentation/widgets/custom_appbar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -33,12 +34,19 @@ class _HomeViewState extends ConsumerState<_HomeView> {
   @override
   Widget build(BuildContext context) {
     final questions = ref.watch(questionsNumberProvider);
-    return ListView.builder(
-      itemCount: questions.length,
-      itemBuilder: (context, index) {
-        final question = questions[index];
-        return ListTile(title: Text(question.question));
-      },
+    return Column(
+      children: [
+        const CustomAppbar(),
+        Expanded(
+          child: ListView.builder(
+            itemCount: questions.length,
+            itemBuilder: (context, index) {
+              final question = questions[index];
+              return ListTile(title: Text(question.question));
+            },
+          ),
+        ),
+      ],
     );
   }
 }
