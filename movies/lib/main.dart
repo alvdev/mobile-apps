@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_dotenv/flutter_dotenv.dart';
 
-void main() {
+Future main() async {
+  await dotenv.load(fileName: '.env');
   runApp(const MyApp());
 }
 
@@ -27,8 +29,8 @@ class HomeScreen extends StatelessWidget {
         title: const Text('This is the appbar'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text('This is the body'),
+      body: Center(
+      child: Text(dotenv.env['THEMOVIEDB_KEY'] ?? 'No key found'),
       ),
     );
   }
