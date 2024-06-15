@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:freegames/data/datasources/games_remote_datasource.dart';
 
 void main() {
   runApp(const MyApp());
@@ -9,6 +10,8 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final gamesData = GamesRemoteDatasource();
+
     return MaterialApp(
       title: 'Free Games',
       debugShowCheckedModeBanner: false,
@@ -17,11 +20,30 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: const Text('This is the appbar'),
         ),
-        body: const Center(
+        body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text('This is the body'),
+              FutureBuilder(
+                future: gamesData.getGames(),
+                builder: (context, games) {
+                  if (games.hasData) {
+                    return Column(
+                      children: [
+                        Image(
+                          image: NetworkImage(games.data.toString()),
+                        ),
+                        Text(games.data.toString()),
+                        const Image(
+                          image: NetworkImage(
+                              'https://www.freetogame.com/g/541/thumbnail.jpg'),
+                        ),
+                      ],
+                    );
+                  }
+                  return const CircularProgressIndicator();
+                },
+              ),
             ],
           ),
         ),
