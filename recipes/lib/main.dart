@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:recipes/recipes.dart';
+import 'package:recipes/widgets/recipes_card_list_widget.dart';
 
 void main() {
   runApp(const MyApp());
@@ -29,22 +29,7 @@ class MyApp extends StatelessWidget {
             ),
             backgroundColor: Colors.green,
           ),
-          body: ListView.builder(
-            itemCount: Recipe.recipes.length,
-            itemBuilder: (context, index) {
-              return Card(
-                child: Row(
-                  children: [
-                    Image.network(
-                      Recipe.recipes[index].imgUrl,
-                      height: 100,
-                    ),
-                    Text(Recipe.recipes[index].name),
-                  ],
-                ),
-              );
-            },
-          ),
+          body: const RecipeCardListWidget(),
         ),
       ),
     );
