@@ -47,11 +47,6 @@ class Recipe {
           'https://www.themealdb.com/images/media/meals/rxvxrr1511797671.jpg',
     ),
     Recipe(
-      name: 'Pear Tarte Tatin',
-      imgUrl:
-          'https://www.themealdb.com/images/media/meals/rxvxrr1511797671.jpg',
-    ),
-    Recipe(
       name: 'Kidney Bean Curry',
       imgUrl:
           'https://www.themealdb.com/images/media/meals/sywrsu1511463066.jpg',
