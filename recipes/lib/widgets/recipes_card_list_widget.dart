@@ -8,16 +8,29 @@ class RecipeCardListWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return ListView.builder(
       itemCount: Recipe.recipes.length,
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 6),
       itemBuilder: (context, index) {
-        return Card(
-          child: Row(
-            children: [
-              Image.network(
-                Recipe.recipes[index].imgUrl,
-                height: 100,
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 4),
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(20),
+            child: Card(
+              child: Row(
+                children: [
+                  Image.network(
+                    Recipe.recipes[index].imgUrl,
+                    height: 100,
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Text(
+                      Recipe.recipes[index].name,
+                      style: const TextStyle(fontWeight: FontWeight.w500),
+                    ),
+                  ),
+                ],
               ),
-              Text(Recipe.recipes[index].name),
-            ],
+            ),
           ),
         );
       },

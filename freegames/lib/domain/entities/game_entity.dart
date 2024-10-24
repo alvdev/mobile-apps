@@ -1,6 +1,6 @@
 class GameEntity {
   final int id;
-  final String title;
+/*   final String title;
   final String thumbnail;
   final String description;
   final String url;
@@ -9,11 +9,11 @@ class GameEntity {
   final String platform;
   final String publisher;
   final String developer;
-  final DateTime releaseDate;
+  final DateTime releaseDate; */
 
   const GameEntity({
     required this.id,
-    required this.title,
+/*     required this.title,
     required this.thumbnail,
     required this.description,
     required this.url,
@@ -22,6 +22,6 @@ class GameEntity {
     required this.platform,
     required this.publisher,
     required this.developer,
-    required this.releaseDate,
+    required this.releaseDate, */
   });
 }
