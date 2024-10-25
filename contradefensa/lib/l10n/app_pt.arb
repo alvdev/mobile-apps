@@ -1,4 +1,5 @@
 {
+    "@@locale": "pt",
     "home": "Ecrã",
     "@home": {
         "description": "Ecrã inicial"
