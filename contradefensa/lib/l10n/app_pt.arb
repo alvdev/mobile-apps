@@ -1,5 +1,6 @@
 {
     "@@locale": "pt",
+    "login": "Início da sessão",
     "home": "Ecrã",
     "@home": {
         "description": "Ecrã inicial"
