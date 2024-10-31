@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:go_router/go_router.dart';
 import 'package:contradefensa/config/theme/theme.dart';
+import 'package:contradefensa/features/login/presentation/login_form_widget.dart';
 import 'package:contradefensa/shared/logo_widget.dart';
 import 'package:contradefensa/utils/extensions.dart';
 
@@ -34,21 +34,33 @@ class LoginPage extends StatelessWidget {
               backgroundColor: const Color.fromRGBO(158, 0, 0, .85),
               title: Text(
                 context.l10n.login,
-                style: AppTheme.dark.textTheme.displaySmall,
+                style: AppTheme.text.displayMedium,
               ),
             ),
-            body: Container(
-              width: double.infinity,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-                  logo,
-                  ElevatedButton(
-                    onPressed: () => context.go('/'),
-                    child: Text(context.l10n.home),
-                  ),
-                ],
+            body: SingleChildScrollView(
+              child: Container(
+                width: double.infinity,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Container(
+                      color: Color.fromRGBO(0, 0, 0, .75),
+                      width: double.infinity,
+                      child: Padding(
+                        padding: const EdgeInsets.all(40),
+                        child: Column(
+                          children: [
+                            logo,
+                            SizedBox(height: 40),
+                            Text(context.l10n.loginIntroTitle)
+                          ],
+                        ),
+                      ),
+                    ),
+                    LoginForm(),
+                  ],
+                ),
               ),
             ),
           ),
