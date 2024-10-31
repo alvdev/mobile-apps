@@ -1,8 +1,13 @@
 {
   "@@locale": "es",
   "login": "Inicio de sesión",
+  "loginIntroTitle": "Hacking y ciberseguridad para la comunidad",
+  "lognIntroSubTitle": "Guías de estudio de ciberseguridad",
   "home": "Inicio",
   "@home": {
     "description": "Pantalla de inicio"
-  }
+  },
+  "email": "email",
+  "password": "Contraseña"
+
 }
