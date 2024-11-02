@@ -8,6 +8,7 @@
     "description": "Pantalla de inicio"
   },
   "email": "email",
-  "password": "Contraseña"
+  "password": "Contraseña",
+  "socialLoginOr": "O acceder con"
 
 }

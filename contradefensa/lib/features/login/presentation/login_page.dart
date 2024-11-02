@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:contradefensa/config/theme/theme.dart';
 import 'package:contradefensa/features/login/presentation/login_form_widget.dart';
+import 'package:contradefensa/features/login/presentation/social_login_widget.dart';
 import 'package:contradefensa/shared/logo_widget.dart';
 import 'package:contradefensa/utils/extensions.dart';
 
@@ -59,6 +60,7 @@ class LoginPage extends StatelessWidget {
                       ),
                     ),
                     LoginForm(),
+                    SocialLoginWidget(),
                   ],
                 ),
               ),
