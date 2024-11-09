@@ -50,3 +50,4 @@ app.*.map.json
 # alv.dev
 .env
 env.g.dart
+*copy.dart
