@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:contradefensa/config/theme/brand_colors.dart';
 import 'package:contradefensa/config/theme/theme.dart';
 import 'package:contradefensa/features/login/presentation/login_form_widget.dart';
 import 'package:contradefensa/features/login/presentation/social_login_widget.dart';
@@ -13,14 +14,12 @@ class LoginPage extends StatelessWidget {
   Widget build(BuildContext context) {
     SystemChrome.setSystemUIOverlayStyle(
       const SystemUiOverlayStyle(
-        statusBarColor: Color.fromRGBO(158, 0, 0, .85),
+        statusBarColor: AppColor.red700,
         statusBarIconBrightness: Brightness.light, // Android light icons
         statusBarBrightness: Brightness.light, // iOS light icons
       ),
     );
-    return Scaffold(
-      backgroundColor: Colors.transparent,
-      body: Container(
+    return Container(
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(20),
           image: DecorationImage(
@@ -31,13 +30,12 @@ class LoginPage extends StatelessWidget {
         child: SafeArea(
           child: Scaffold(
             backgroundColor: Colors.transparent,
-            appBar: AppBar(
-              backgroundColor: const Color.fromRGBO(158, 0, 0, .85),
-              title: Text(
-                context.l10n.login,
-                style: AppTheme.text.displayMedium,
-              ),
+          appBar: AppBar(
+            title: Text(
+              context.l10n.login,
+              style: AppTheme.text.displayMedium,
             ),
+          ),
             body: SingleChildScrollView(
               child: Container(
                 width: double.infinity,
@@ -61,8 +59,7 @@ class LoginPage extends StatelessWidget {
                     ),
                     LoginForm(),
                     SocialLoginWidget(),
-                  ],
-                ),
+                ],
               ),
             ),
           ),
